@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api/expenses";
+const API_URL =
+  "https://expense-manager-api-4xci.onrender.com/api/expenses";
 
 const initialForm = {
   title: "",
