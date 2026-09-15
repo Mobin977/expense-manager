@@ -1,0 +1,925 @@
+/* ========================================
+   EXPENSE MANAGER
+   CLEAN GREEN FINANCE THEME
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7f2;
+  color: #243229;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* ========================================
+   APP
+======================================== */
+
+.app {
+  min-height: 100vh;
+  background: #f4f7f2;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  background: #f4f7f2;
+  padding: 35px 6% 20px;
+  border-bottom: 1px solid #dce7dc;
+}
+
+.header h1 {
+  color: #174c32;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.header p {
+  color: #6b7c70;
+  font-size: 15px;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.container {
+  width: 88%;
+  max-width: 1180px;
+  margin: 28px auto 50px;
+}
+
+
+/* ========================================
+   SUMMARY CARDS
+======================================== */
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  background: #ffffff;
+
+  border: 1px solid #dce7dc;
+  border-radius: 18px;
+
+  padding: 25px 28px;
+
+  box-shadow: 0 8px 25px rgba(41, 75, 50, 0.06);
+}
+
+.summary-card h3 {
+  color: #728177;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.summary-card p {
+  color: #174c32;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+
+/* ========================================
+   ADD EXPENSE BUTTON
+======================================== */
+
+.add-expense-section {
+  margin-bottom: 25px;
+}
+
+.open-form-btn {
+  width: 100%;
+
+  padding: 16px 20px;
+
+  border: none;
+  border-radius: 13px;
+
+  background: #247a4d;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  box-shadow: 0 7px 18px rgba(36, 122, 77, 0.18);
+
+  transition: 0.2s;
+}
+
+.open-form-btn:hover {
+  background: #1c633e;
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   FORM SECTION
+======================================== */
+
+.form-section {
+  background: #ffffff;
+
+  border: 1px solid #dce7dc;
+  border-radius: 18px;
+
+  padding: 28px;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 25px rgba(41, 75, 50, 0.06);
+}
+
+
+/* ========================================
+   FORM HEADER
+======================================== */
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.form-header h2 {
+  color: #174c32;
+  font-size: 22px;
+}
+
+.close-form-btn {
+  width: 35px;
+  height: 35px;
+
+  border: 1px solid #dce7dc;
+  border-radius: 50%;
+
+  background: #f4f7f2;
+  color: #64756a;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+}
+
+.close-form-btn:hover {
+  background: #e7efe5;
+  color: #174c32;
+}
+
+
+/* ========================================
+   EXPENSE FORM
+======================================== */
+
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #405247;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid #ccd8ce;
+  border-radius: 10px;
+
+  background: #fbfdfb;
+  color: #243229;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4a9a68;
+
+  box-shadow:
+    0 0 0 3px rgba(74, 154, 104, 0.10);
+
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+/* ========================================
+   FORM BUTTONS
+======================================== */
+
+.add-expense-btn {
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #247a4d;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.add-expense-btn:hover {
+  background: #1c633e;
+}
+
+.add-expense-btn:disabled {
+  background: #9eaaa1;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #edf1ed;
+  color: #4d5d52;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #dfe7df;
+}
+
+
+/* ========================================
+   EXPENSE SECTION
+======================================== */
+
+.expense-section {
+  margin-top: 30px;
+}
+
+.expense-section > h2 {
+  color: #174c32;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  margin-bottom: 18px;
+}
+
+
+/* ========================================
+   FILTERS
+======================================== */
+
+.filters {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 13px;
+
+  margin-bottom: 22px;
+}
+
+
+/* ========================================
+   SEARCH BOX
+======================================== */
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-wrapper input {
+  width: 100%;
+  height: 47px;
+
+  padding: 13px 43px 13px 41px;
+
+  border: 1px solid #ccd8ce;
+  border-radius: 11px;
+
+  background: white;
+  color: #243229;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.search-wrapper input:focus {
+  border-color: #4a9a68;
+
+  box-shadow:
+    0 0 0 3px rgba(74, 154, 104, 0.10);
+}
+
+.search-wrapper input::placeholder {
+  color: #98a49c;
+}
+
+
+/* ========================================
+   SEARCH ICON
+======================================== */
+
+.search-icon {
+  position: absolute;
+
+  left: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 16px;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   CLEAR SEARCH BUTTON
+======================================== */
+
+.clear-search-btn {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 26px;
+  height: 26px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #e8eee9;
+  color: #536259;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+}
+
+.clear-search-btn:hover {
+  background: #d6e2d8;
+  color: #174c32;
+}
+
+
+/* ========================================
+   CATEGORY FILTER
+======================================== */
+
+.filters select {
+  width: 100%;
+  height: 47px;
+
+  padding: 0 13px;
+
+  border: 1px solid #ccd8ce;
+  border-radius: 11px;
+
+  background: white;
+  color: #405247;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.filters select:focus {
+  border-color: #4a9a68;
+
+  box-shadow:
+    0 0 0 3px rgba(74, 154, 104, 0.10);
+}
+
+
+/* ========================================
+   DATE FILTER
+======================================== */
+
+.date-filter-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.date-filter-wrapper input {
+  width: 100%;
+  height: 47px;
+
+  padding: 0 43px 0 13px;
+
+  border: 1px solid #ccd8ce;
+  border-radius: 11px;
+
+  background: white;
+  color: #405247;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.date-filter-wrapper input:focus {
+  border-color: #4a9a68;
+
+  box-shadow:
+    0 0 0 3px rgba(74, 154, 104, 0.10);
+}
+
+
+/* ========================================
+   CLEAR DATE BUTTON
+======================================== */
+
+.clear-date-btn {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 26px;
+  height: 26px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #e8eee9;
+  color: #536259;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+}
+
+.clear-date-btn:hover {
+  background: #d6e2d8;
+  color: #174c32;
+}
+
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.empty-state {
+  background: white;
+
+  border: 1px dashed #cbd9cd;
+  border-radius: 18px;
+
+  padding: 50px 20px;
+
+  text-align: center;
+
+  color: #78867d;
+}
+
+.empty-state p {
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.empty-add-btn {
+  border: none;
+  border-radius: 9px;
+
+  background: #247a4d;
+  color: white;
+
+  padding: 12px 18px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.empty-add-btn:hover {
+  background: #1c633e;
+}
+
+
+/* ========================================
+   EXPENSE LIST
+======================================== */
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+
+/* ========================================
+   EXPENSE CARD
+======================================== */
+
+.expense-card {
+  background: white;
+
+  border: 1px solid #dce7dc;
+  border-radius: 16px;
+
+  padding: 20px 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 25px;
+
+  box-shadow:
+    0 5px 18px rgba(41, 75, 50, 0.045);
+
+  transition: 0.2s;
+}
+
+.expense-card:hover {
+  border-color: #bcd0bf;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 22px rgba(41, 75, 50, 0.08);
+}
+
+
+/* ========================================
+   EXPENSE INFORMATION
+======================================== */
+
+.expense-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-info h3 {
+  color: #243229;
+
+  font-size: 18px;
+  font-weight: 750;
+
+  margin-bottom: 7px;
+}
+
+.expense-info p {
+  color: #7a887f;
+
+  font-size: 14px;
+
+  margin-bottom: 12px;
+
+  word-break: break-word;
+}
+
+
+/* ========================================
+   EXPENSE META
+======================================== */
+
+.expense-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.expense-meta span {
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #edf6ee;
+  color: #32734c;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   EXPENSE RIGHT SIDE
+======================================== */
+
+.expense-right {
+  min-width: 230px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 5px;
+}
+
+.expense-right strong {
+  color: #168044;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.expense-right small {
+  color: #87938b;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   EXPENSE ACTIONS
+======================================== */
+
+.expense-actions {
+  display: flex;
+
+  gap: 7px;
+
+  margin-top: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  border-radius: 8px;
+
+  padding: 8px 11px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background: #edf6f1;
+  color: #267047;
+}
+
+.edit-btn:hover {
+  background: #dceee3;
+}
+
+.delete-btn {
+  background: #fff1ed;
+  color: #c45136;
+}
+
+.delete-btn:hover {
+  background: #ffe2db;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.expense-section > p {
+  background: white;
+
+  border: 1px solid #dce7dc;
+  border-radius: 16px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: #78867d;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+  .container {
+    width: 92%;
+  }
+
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  .expense-card {
+    align-items: flex-start;
+  }
+
+  .expense-right {
+    min-width: 200px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .header {
+    padding: 28px 5% 18px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .container {
+    width: 92%;
+    margin-top: 20px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-card {
+    padding: 21px;
+  }
+
+  .expense-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .search-wrapper {
+    grid-column: auto;
+  }
+
+  .expense-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .expense-right {
+    min-width: auto;
+    align-items: flex-start;
+
+    border-top: 1px solid #e5ece6;
+
+    padding-top: 15px;
+  }
+
+  .expense-actions {
+    width: 100%;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    flex: 1;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 450px) {
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .form-section {
+    padding: 17px;
+  }
+
+  .form-header h2 {
+    font-size: 19px;
+  }
+
+  .summary-card p {
+    font-size: 25px;
+  }
+
+  .expense-info h3 {
+    font-size: 17px;
+  }
+
+  .expense-right strong {
+    font-size: 19px;
+  }
+
+  .expense-actions {
+    flex-direction: column;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
